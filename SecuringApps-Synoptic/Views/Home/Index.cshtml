@@ -1,0 +1,38 @@
+﻿@model SecuringApps_Synoptic.Models.PasswordModel
+
+<h4>Securing Apps</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+      
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Enter" class="btn btn-primary" />
+            </div>
+           <br /> <label class="control-label">Encrypted: @ViewBag.EncryptedPassword</label>
+           <br /><label class="control-label">Decrypted: @ViewBag.DecryptedPassword</label>
+        </form>
+        <form method="post" asp-action="Index" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="Photo"/>
+
+            <br /><span asp-validation-for="Photo" class="text-danger"></span>
+           
+            <div class="form-group">
+                <input type="submit" value="Upload" class="btn btn-primary" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+
+
+
